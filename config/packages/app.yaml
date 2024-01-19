@@ -1,0 +1,6 @@
+app:
+    type:
+        string: modified
+        int: 123
+    groupe_1:
+    groupe_2:
