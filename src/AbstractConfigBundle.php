@@ -25,7 +25,7 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 use Symfony\Component\DependencyInjection\Loader\Configurator\ServicesConfigurator;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
-abstract class MazariniConfigBundle extends AbstractBundle
+abstract class AbstractConfigBundle extends AbstractBundle
 {
     private ConfigInterface $defaultConfig;
 

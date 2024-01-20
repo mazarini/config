@@ -1,6 +1,6 @@
 ###> local ###
 /public
-#src/Controller/.gitignore
+src/Controller/.gitignore
 /src/Kernel.php
 /var/*
 !var/database

@@ -23,11 +23,11 @@ use App\Config\Config;
 use App\Config\ConfigTrait;
 use App\Service\ObjectService;
 use Mazarini\Config\Config\ConfigInterface;
-use Mazarini\Config\MazariniConfigBundle;
+use Mazarini\Config\AbstractConfigBundle;
 use Symfony\Component\Config\Definition\Configurator\DefinitionConfigurator;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ServicesConfigurator;
 
-class AppBundle extends MazariniConfigBundle
+class AppBundle extends AbstractConfigBundle
 {
     use ConfigTrait;
 
