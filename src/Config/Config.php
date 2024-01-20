@@ -55,17 +55,16 @@ class Config implements ConfigInterface
 
     /**
      * getNode.
-     *
-     * @param array<int,string|int> $keys
      */
-    private function getNode(array $keys): mixed
+    private function getNode(string $concatkeys): mixed
     {
+        $keys = explode('.', $concatkeys);
         $array = $this->configData;
         foreach ($keys as $key) {
             if (\is_array($array) && isset($array[$key])) {
                 $array = $array[$key];
             } else {
-                throw new \LogicException('Wrong key : $config["'.implode('"]["', $keys).'"]');
+                throw new \LogicException('Wrong key : $config["'.$concatkeys.'"]');
             }
         }
 
@@ -75,32 +74,28 @@ class Config implements ConfigInterface
     /**
      * getArray.
      *
-     * @param string|int ...$keys
-     *
      * @return array<mixed>
      */
-    public function getArray(...$keys): array
+    public function getArray(string $key): array
     {
-        $array = $this->getNode($keys);
+        $array = $this->getNode($key);
         if (\is_array($array)) {
             return $array;
         }
-        throw new \LogicException('Wrong type : $config["'.implode('"]["', $keys).'"]');
+        throw new \LogicException('Wrong type : $config['.$key.'"]');
     }
 
     /**
      * getValue.
      *
-     * @param int|string ...$keys
-     *
      * @return scalar
      */
-    public function getValue(...$keys): bool|int|float|string
+    public function getValue(string $key): bool|int|float|string
     {
-        $value = $this->getNode($keys);
+        $value = $this->getNode($key);
         if (\is_scalar($value)) {
             return $value;
         }
-        throw new \LogicException('Wrong type : $config["'.implode('"]["', $keys).'"]');
+        throw new \LogicException('Wrong type : $config["'.$key.'"]');
     }
 }

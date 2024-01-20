@@ -23,16 +23,16 @@ trait ConfigTrait
 {
     public function getTypeString(): string
     {
-        return (string) $this->getConfig()->getValue('type', 'string');
+        return (string) $this->getConfig()->getValue('type.string');
     }
 
     public function getTypeInt(): int
     {
-        return (int) $this->getConfig()->getValue('type', 'int');
+        return (int) $this->getConfig()->getValue('type.int');
     }
 
     public function getTypeBool(): bool
     {
-        return (bool) $this->getConfig()->getValue('type', 'bool');
+        return (bool) $this->getConfig()->getValue('type.bool');
     }
 }

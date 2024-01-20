@@ -88,7 +88,7 @@ class ConfigTest extends KernelTestCase
     public function testBadTypeArray(): void
     {
         $this->expectException(\LogicException::class);
-        $this->config->getArray('type', 'bool');
+        $this->config->getArray('type.bool');
     }
 
     public function testBadTypeValue(): void

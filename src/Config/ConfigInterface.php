@@ -24,18 +24,18 @@ interface ConfigInterface
     /**
      * getData.
      *
-     * @return array<string,mixed>
+     * @return array<mixed>
      */
     public function getData(): array;
 
     /**
-     * getValue.
+     * getArray.
      *
-     * @param int|string ...$keys
-     *
-     * @return scalar
+     * @return array<mixed>
      */
-    public function getValue(...$keys): bool|int|float|string;
+    public function getArray(string $key): array;
 
-    public function getConfig(): static;
+    public function getValue(string $key): bool|int|float|string;
+
+    public function getConfig(): self;
 }

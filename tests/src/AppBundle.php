@@ -22,8 +22,8 @@ namespace App;
 use App\Config\Config;
 use App\Config\ConfigTrait;
 use App\Service\ObjectService;
-use Mazarini\Config\Config\ConfigInterface;
 use Mazarini\Config\AbstractConfigBundle;
+use Mazarini\Config\Config\ConfigInterface;
 use Symfony\Component\Config\Definition\Configurator\DefinitionConfigurator;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ServicesConfigurator;
 
