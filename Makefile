@@ -12,8 +12,7 @@ phpstan:
 	~/.composer/vendor/bin/phpstan
 
 yaml:
-	bin/console lint:yaml config phpstan.dist.neon
-	bin/console lint:yaml config
+	bin/console lint:yaml tests/config
 	bin/console lint:yaml phpstan.dist.neon
 
 composer:

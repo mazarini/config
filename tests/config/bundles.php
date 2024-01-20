@@ -17,17 +17,9 @@
  * You should have received a copy of the GNU General Public License
  */
 
-namespace App;
-
-use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
-use Symfony\Component\HttpKernel\Kernel as BaseKernel;
-
-class Kernel extends BaseKernel
-{
-    use MicroKernelTrait;
-
-    protected function getConfigDir(): string
-    {
-        return $this->getProjectDir().'/tests/config';
-    }
-}
+return [
+    App\AppBundle::class => ['all' => true],
+    Symfony\Bundle\FrameworkBundle\FrameworkBundle::class => ['all' => true],
+    Symfony\Bundle\DebugBundle\DebugBundle::class => ['dev' => true],
+    Symfony\Bundle\MakerBundle\MakerBundle::class => ['dev' => true],
+];

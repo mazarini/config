@@ -5,7 +5,7 @@ parameters:
     level: 9
     paths:
         - bin/
-        - config/
         - src/
+        - tests/config/
         - tests/src
         - tests/tests
