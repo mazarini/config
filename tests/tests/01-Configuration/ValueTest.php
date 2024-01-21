@@ -21,11 +21,12 @@ namespace App\Tests\ConfigurationPager;
 
 use App\Config\Config;
 use App\Config\ConfigTrait;
-use Mazarini\Config\Config\ConfigInterface;
+use Mazarini\Config\Test\ConfigTestTrait;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class ValueTest extends KernelTestCase
 {
+    use ConfigTestTrait;
     use ConfigTrait;
 
     public function testConfigExists(): void
@@ -59,14 +60,5 @@ class ValueTest extends KernelTestCase
             ['getTypeInt', 123],
             ['getTypeBool', true],
         ];
-    }
-
-    public function getConfig(): ConfigInterface
-    {
-        $config = $this->getContainer()->get(Config::class);
-        if ($config instanceof ConfigInterface) {
-            return $config;
-        }
-        throw new \LogicException('Never occurs');
     }
 }

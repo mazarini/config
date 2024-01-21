@@ -17,10 +17,17 @@
  * You should have received a copy of the GNU General Public License
  */
 
-namespace App;
+namespace Mazarini\Config;
 
-use Mazarini\Config\KernelTest;
+use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
+use Symfony\Component\HttpKernel\Kernel as BaseKernel;
 
-class Kernel extends KernelTest
+abstract class KernelTest extends BaseKernel
 {
+    use MicroKernelTrait;
+
+    protected function getConfigDir(): string
+    {
+        return $this->getProjectDir().'/tests/config';
+    }
 }

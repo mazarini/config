@@ -17,10 +17,22 @@
  * You should have received a copy of the GNU General Public License
  */
 
-namespace App;
+namespace App\Tests\ConfigurationPager;
 
-use Mazarini\Config\KernelTest;
+use Mazarini\Config\Test\ConfigTestTrait;
+use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
-class Kernel extends KernelTest
+class UpdateTest extends KernelTestCase
 {
+    use ConfigTestTrait;
+
+    public function testModifiyConfig(): void
+    {
+        $this->setConfig([
+            'type' => [
+                'string' => 'set',
+            ],
+        ]);
+        $this->assertSame('set', $this->getConfig()->getValue('type.string'));
+    }
 }

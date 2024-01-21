@@ -81,6 +81,6 @@ abstract class AbstractConfigBundle extends AbstractBundle
             ->set($config::class)
             ->arg('$configData', $config->getData())
             ->public()
-        ;
+            ->alias(ConfigInterface::class, $config::class);
     }
 }
