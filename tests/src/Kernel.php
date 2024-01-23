@@ -19,7 +19,7 @@
 
 namespace App;
 
-use Mazarini\Config\KernelTest;
+use Mazarini\Test\KernelTest;
 
 class Kernel extends KernelTest
 {
